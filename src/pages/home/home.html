@@ -7,8 +7,35 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <ion-item>
+    <ion-label>Sample rate</ion-label>
+    <ion-select [(ngModel)]="sampleRate">
+      <ion-option value="8000">8000</ion-option>
+      <ion-option value="22050">22050</ion-option>
+      <ion-option value="44100">44100</ion-option>
+      <ion-option value="48000">48000</ion-option>
+      <ion-option value="88200">88200</ion-option>
+      <ion-option value="96000">96000</ion-option>
+
+
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Bitrate</ion-label>
+    <ion-select [(ngModel)]="bitRate">
+      <ion-option value="8">8kb</ion-option>
+      <ion-option value="16">16kb</ion-option>
+      <ion-option value="32">32kb</ion-option>
+      <ion-option value="64">64kb</ion-option>
+      <ion-option value="128">128kb</ion-option>
+      <ion-option value="320">320kb</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <button ion-button (click)="startRecord()">StartRecord</button>
+
+  <button ion-button color="secondary" (click)="stopRecord()">Stop Record</button>
+
 </ion-content>
